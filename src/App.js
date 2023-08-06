@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+// DEPENDENCIES
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// REACT COMPONENTS
+import Index from "./Components/Index.js"
+
+// STYLESHEETS
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <main>
+          <Routes>
+            <Route path="/" element={<div>Welcome to the Eggplant List Homepage</div>} />
+            <Route path="/eggplants" element={<Index />} />
+          </Routes>
+        </main>
+      </Router>
     </div>
   );
 }
